@@ -1,0 +1,8 @@
+{% comment %}
+This section displays the product image.
+{% endcomment %}
+
+{% assign featured_image = product.selected_or_first_available_variant.featured_image %}
+{% if featured_image %}
+  <img src="{{ featured_image.src | img_url }}" alt="{{ featured_image.alt | escape }}">
+{% endif %}
